@@ -12,12 +12,20 @@ repositories {
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
-    testCompile("junit:junit:4.12")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.6.2")
 }
 
-compileKotlin {
+tasks.test {
+    useJUnitPlatform()
+    testLogging {
+        events("passed", "skipped", "failed")
+    }
+}
+
+
+tasks.compileKotlin {
     kotlinOptions.jvmTarget = "11"
 }
-compileTestKotlin {
+tasks.compileTestKotlin {
     kotlinOptions.jvmTarget = "11"
 }
