@@ -6,5 +6,5 @@ import org.springframework.stereotype.Component
 @Component
 class Query : GraphQLQueryResolver {
 
-    fun hello(): String = "hello"
+    fun hello(): String = "foo"
 }
