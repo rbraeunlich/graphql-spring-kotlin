@@ -1,0 +1,12 @@
+graphql:
+  servlet:
+    enabled: true
+    mapping: /graphql
+  tools:
+    schema-location-pattern: "/graphql/*.graphqls"
+    introspection-enabled: true
+graphiql:
+  enabled: true
+  mapping: /graphiql
+  endpoint:
+    graphql: /graphql

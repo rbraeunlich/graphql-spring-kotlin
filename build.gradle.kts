@@ -19,6 +19,9 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("com.graphql-java-kickstart:graphql-spring-boot-starter:7.0.1")
+    runtimeOnly("com.graphql-java-kickstart:graphiql-spring-boot-starter:7.0.1")
+
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.2")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
