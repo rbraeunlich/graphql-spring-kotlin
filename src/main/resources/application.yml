@@ -2,6 +2,8 @@ graphql:
   servlet:
     enabled: true
     mapping: /graphql
+    websocket:
+      enabled: false
   tools:
     schema-location-pattern: "/graphql/*.graphqls"
     introspection-enabled: true

@@ -19,17 +19,15 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("com.graphql-java-kickstart:graphql-spring-boot-starter:7.0.1")
+    implementation("com.graphql-java-kickstart:graphql-spring-boot-starter:7.1.0")
 
-    runtimeOnly("com.graphql-java-kickstart:graphiql-spring-boot-starter:7.0.1")
+    runtimeOnly("com.graphql-java-kickstart:graphiql-spring-boot-starter:7.1.0")
 
     testImplementation("junit:junit:4.13")
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("com.graphql-java-kickstart:graphql-spring-boot-starter-test:7.1.0")
     testImplementation("org.assertj:assertj-core:3.11.1")
-
-    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.6.2")
 }
 
 tasks.test {
