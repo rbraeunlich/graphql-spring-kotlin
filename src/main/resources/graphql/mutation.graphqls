@@ -1,0 +1,7 @@
+type Mutation {
+    update(arg: Argument): Response!
+}
+
+extend type Mutation {
+    addToDoItem(toDoItem: ToDoItemInput): ToDoItem
+}

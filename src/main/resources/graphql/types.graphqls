@@ -1,0 +1,18 @@
+type Response {
+    id: ID!
+    text: String
+}
+
+######## To-Do application starts here
+
+type ToDoItem {
+    id: ID!
+    severity: Severity!
+    title: String!
+    notes: String
+    createdAt: Date!
+    lastModifiedAt: Date!
+}
+
+# ISO 8601 date format
+scalar Date

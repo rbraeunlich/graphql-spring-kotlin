@@ -3,20 +3,20 @@ schema {
     mutation: Mutation
 }
 
-type Query {
-    hello: String
-}
-
-type Mutation {
-    update(arg: Argument): Response!
-}
-
 input Argument {
     id: ID!
     number: Int
 }
 
-type Response {
-    id: ID!
-    text: String
+######## To-Do application starts here
+
+input ToDoItemInput {
+    severity: Severity!
+    title: String!
+    notes: String
 }
+
+enum Severity {
+    HIGH, MEDIUM, LOW
+}
+

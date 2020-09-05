@@ -1,4 +1,4 @@
-package dev.code_n_roll.jcon.graphql
+package dev.code_n_roll.jcon
 
 import com.graphql.spring.boot.test.GraphQLTest
 import com.graphql.spring.boot.test.GraphQLTestTemplate
