@@ -1,6 +1,22 @@
 schema {
     query: Query
+    mutation: Mutation
 }
-type Query{
+
+type Query {
     hello: String
+}
+
+type Mutation {
+    update(arg: Argument): Response!
+}
+
+input Argument {
+    id: ID!
+    number: Int
+}
+
+type Response {
+    id: ID!
+    text: String
 }
