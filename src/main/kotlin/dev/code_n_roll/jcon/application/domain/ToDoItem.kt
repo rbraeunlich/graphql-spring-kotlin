@@ -13,4 +13,7 @@ class ToDoItem(@Id val id: UUID,
                val notes: String?,
                val createdAt: Instant,
                val lastModifiedAt: Instant
-)
+) {
+    fun update(newSeverity: Severity, newTitle: String, newNotes: String?): ToDoItem =
+        ToDoItem(this.id, newSeverity, newTitle, newNotes, this.createdAt, Instant.now())
+}

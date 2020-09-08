@@ -3,5 +3,6 @@ type Mutation {
 }
 
 extend type Mutation {
-    addToDoItem(toDoItem: ToDoItemInput): ToDoItem
+    addToDoItem(toDoItem: ToDoItemInput!): ToDoItem!
+    updateToDoItem(id: ID!, toDoItemUpdate: ToDoItemInput!): ToDoItem!
 }
