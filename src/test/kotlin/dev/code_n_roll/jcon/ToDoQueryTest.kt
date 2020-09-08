@@ -115,8 +115,8 @@ class ToDoQueryTest {
     fun `should find ToDo items by modification date`() {
         val createdAt = Instant.now()
         val lastModifiedAt = Instant.now()
-        val toDoItem = ToDoItem(UUID.randomUUID(), Severity.LOW, "Title", null, createdAt, lastModifiedAt)
-        val toDoItem2 = ToDoItem(UUID.randomUUID(), Severity.LOW, "Title", null, createdAt, Instant.now())
+        val toDoItem = ToDoItem(UUID.randomUUID(), Severity.LOW, "Title", null, createdAt, lastModifiedAt.plusMillis(2000L))
+        val toDoItem2 = ToDoItem(UUID.randomUUID(), Severity.LOW, "Title", null, createdAt, lastModifiedAt.plusMillis(3000L))
         toDoItemRepository.saveAll(listOf(toDoItem, toDoItem2))
         val response = graphQLTestTemplate.postMultipart(
             """
