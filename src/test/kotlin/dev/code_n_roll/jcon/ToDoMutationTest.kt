@@ -4,7 +4,7 @@ import com.graphql.spring.boot.test.GraphQLTestTemplate
 import dev.code_n_roll.jcon.application.domain.ToDoItem
 import dev.code_n_roll.jcon.application.domain.ToDoItemRepository
 import dev.code_n_roll.jcon.application.dto.ToDoItemDto
-import dev.code_n_roll.jcon.application.input.Severity
+import dev.code_n_roll.jcon.application.graphql.input.Severity
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.within
 import org.junit.After

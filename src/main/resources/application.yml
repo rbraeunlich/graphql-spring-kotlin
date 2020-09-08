@@ -12,3 +12,6 @@ graphiql:
   mapping: /graphiql
   endpoint:
     graphql: /graphql
+logging:
+  level:
+    graphql.kickstart: DEBUG

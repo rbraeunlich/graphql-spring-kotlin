@@ -1,4 +1,4 @@
-package dev.code_n_roll.jcon.application.input
+package dev.code_n_roll.jcon.application.graphql.input
 
 data class ToDoItemInput(val severity: Severity,
                          val title: String,

@@ -1,4 +1,4 @@
-package dev.code_n_roll.jcon.application
+package dev.code_n_roll.jcon.application.graphql
 
 import graphql.language.StringValue
 import graphql.schema.Coercing
@@ -10,7 +10,9 @@ import java.time.Instant
 
 @Component
 class DateScalar(name: String?, description: String?, coercing: Coercing<*, *>?) :
-    GraphQLScalarType("Date", "Scalar representing an ISO-8601 date", DateCoercing()) {
+    GraphQLScalarType("Date", "Scalar representing an ISO-8601 date",
+        DateCoercing()
+    ) {
 }
 
 class DateCoercing: Coercing<Instant, String> {
@@ -19,7 +21,7 @@ class DateCoercing: Coercing<Instant, String> {
 
     override fun parseLiteral(input: Any?): Instant {
         return if (input is StringValue) {
-            Instant.parse(input.toString())
+            Instant.parse(input.value)
         } else {
             throw CoercingParseLiteralException("Expected AST type 'StringValue'.")
         }

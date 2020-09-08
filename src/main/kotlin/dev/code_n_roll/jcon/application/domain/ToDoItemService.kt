@@ -1,8 +1,10 @@
 package dev.code_n_roll.jcon.application.domain
 
-import dev.code_n_roll.jcon.application.input.Severity
+import dev.code_n_roll.jcon.application.dto.ToDoItemDto
+import dev.code_n_roll.jcon.application.graphql.input.Severity
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
+import java.time.Instant
 import java.util.*
 
 @Service
@@ -17,5 +19,12 @@ class ToDoItemService @Autowired constructor(private val repository: ToDoItemRep
             .orElseThrow()
 
     }
+
+    fun findById(id: UUID): Optional<ToDoItem> = repository.findById(id)
+    fun findByTitle(title: String): List<ToDoItem> = repository.findAllByTitle(title)
+    fun findByCreatedAfter(createdAfter: Instant): List<ToDoItem> = repository.findAllByCreatedAtAfter(createdAfter)
+    fun findByModificationBetween(lastModifiedAfter: Instant, lastModifiedBefore: Instant): List<ToDoItem> =
+        repository.findAllByLastModifiedAtBetween(lastModifiedAfter, lastModifiedBefore)
+
 
 }

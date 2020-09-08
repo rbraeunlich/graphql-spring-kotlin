@@ -1,6 +1,6 @@
 package dev.code_n_roll.jcon.application.domain
 
-import dev.code_n_roll.jcon.application.input.Severity
+import dev.code_n_roll.jcon.application.graphql.input.Severity
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import java.time.Instant

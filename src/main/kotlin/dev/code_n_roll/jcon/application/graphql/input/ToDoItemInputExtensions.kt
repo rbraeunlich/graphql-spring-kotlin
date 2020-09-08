@@ -1,4 +1,4 @@
-package dev.code_n_roll.jcon.application.input
+package dev.code_n_roll.jcon.application.graphql.input
 
 import dev.code_n_roll.jcon.application.domain.ToDoItem
 import java.time.Instant
