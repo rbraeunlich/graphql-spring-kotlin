@@ -18,8 +18,10 @@ repositories {
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("com.graphql-java-kickstart:graphql-spring-boot-starter:7.1.0")
+    implementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo")
 
     runtimeOnly("com.graphql-java-kickstart:graphiql-spring-boot-starter:7.1.0")
 

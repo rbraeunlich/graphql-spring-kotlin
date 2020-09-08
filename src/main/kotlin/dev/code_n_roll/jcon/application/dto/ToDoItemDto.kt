@@ -1,5 +1,6 @@
-package dev.code_n_roll.jcon.application
+package dev.code_n_roll.jcon.application.dto
 
+import dev.code_n_roll.jcon.application.input.Severity
 import java.time.Instant
 import java.util.*
 
