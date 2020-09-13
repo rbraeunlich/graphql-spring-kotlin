@@ -25,6 +25,7 @@ class ToDoItemService @Autowired constructor(private val repository: ToDoItemRep
     fun findByCreatedAfter(createdAfter: Instant): List<ToDoItem> = repository.findAllByCreatedAtAfter(createdAfter)
     fun findByModificationBetween(lastModifiedAfter: Instant, lastModifiedBefore: Instant): List<ToDoItem> =
         repository.findAllByLastModifiedAtBetween(lastModifiedAfter, lastModifiedBefore)
+    fun findBySeverity(severity: Severity): List<ToDoItem> = repository.findAllBySeverity(severity)
 
 
 }

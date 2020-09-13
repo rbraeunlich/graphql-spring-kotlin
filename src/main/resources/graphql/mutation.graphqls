@@ -1,8 +1,21 @@
 type Mutation {
-    update(arg: Argument): Response!
+    """
+    Updates something and responds with a `Response`.
+    """
+    update(
+        "Some nice argument"
+        arg: Argument
+    ): Response!
 }
 
 extend type Mutation {
     addToDoItem(toDoItem: ToDoItemInput!): ToDoItem!
-    updateToDoItem(id: ID!, toDoItemUpdate: ToDoItemInput!): ToDoItem!
+    """
+    Updates the existing ToDo item. Next to updating the fields, the `lastModifiedAt` date is updated.
+    """
+    updateToDoItem(
+        "The ID of the ToDo item"
+        id: ID!
+        "The input with the fields to change"
+        toDoItemUpdate: ToDoItemInput!): ToDoItem!
 }

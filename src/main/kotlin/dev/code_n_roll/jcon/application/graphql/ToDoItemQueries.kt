@@ -4,6 +4,7 @@ import dev.code_n_roll.jcon.application.domain.ToDoItem
 import dev.code_n_roll.jcon.application.domain.ToDoItemService
 import dev.code_n_roll.jcon.application.domain.toDto
 import dev.code_n_roll.jcon.application.dto.ToDoItemDto
+import dev.code_n_roll.jcon.application.graphql.input.Severity
 import graphql.kickstart.tools.GraphQLQueryResolver
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
@@ -24,4 +25,7 @@ class ToDoItemQueries @Autowired constructor(private val toDoItemService: ToDoIt
 
     fun toDoItemByModification(lastModifiedAfter: Instant, lastModifiedBefore: Instant): List<ToDoItemDto> =
         toDoItemService.findByModificationBetween(lastModifiedAfter, lastModifiedBefore).map { it.toDto() }
+
+    fun toDoItemBySeverity(severity: Severity): List<ToDoItemDto> = toDoItemService.findBySeverity(severity)
+        .map { it.toDto() }
 }

@@ -139,4 +139,31 @@ class ToDoQueryTest {
         assertThat(toDoItemDtoList)
             .allSatisfy { assertThat(it.id).isEqualTo(toDoItem.id) }
     }
+
+    @Test
+    fun `should find ToDo items by severity`() {
+        val toDoItem = ToDoItem(UUID.randomUUID(), Severity.LOW, "Title", null, Instant.now(), Instant.now())
+        val toDoItem2 = ToDoItem(UUID.randomUUID(), Severity.HIGH, "Title", null, Instant.now(), Instant.now())
+        toDoItemRepository.saveAll(listOf(toDoItem, toDoItem2))
+        val response = graphQLTestTemplate.postMultipart(
+            """
+            query q1 {
+              toDoItemBySeverity(severity:  ${toDoItem2.severity}) {
+                id
+                severity
+                title
+                notes
+                createdAt
+                lastModifiedAt
+              }
+            }
+        """.trimIndent(), "{}"
+        )
+        assertThat(response).isNotNull()
+        assertThat(response.statusCode).isEqualTo(HttpStatus.OK)
+        val toDoItemDtoList: List<ToDoItemDto> = response.getList("data.toDoItemBySeverity", ToDoItemDto::class.java)
+        assertThat(toDoItemDtoList).hasSize(1)
+            .first()
+            .extracting { it.id }.isEqualTo(toDoItem2.id)
+    }
 }
