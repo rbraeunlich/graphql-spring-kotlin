@@ -2,6 +2,7 @@ graphql:
   servlet:
     enabled: true
     mapping: /graphql
+    exception-handlers-enabled: true
     websocket:
       enabled: false
   tools:
