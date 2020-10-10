@@ -4,8 +4,8 @@ type Query {
 
 extend type Query {
     toDoItemById(id: ID!): ToDoItem
-    toDoItemByTitle(title: String!): [ToDoItem]!
-    toDoItemByCreation(createdAfter: Date!): [ToDoItem]!
-    toDoItemByModification(lastModifiedAfter: Date! lastModifiedBefore: Date!): [ToDoItem]!
-    toDoItemBySeverity(severity: Severity!): [ToDoItem]!
+    toDoItemByTitle(title: String!): [ToDoItem!]!
+    toDoItemByCreation(createdAfter: Date!): [ToDoItem!]!
+    toDoItemByModification(lastModifiedAfter: Date! lastModifiedBefore: Date!): [ToDoItem!]!
+    toDoItemBySeverity(severity: Severity!): [ToDoItem!]!
 }

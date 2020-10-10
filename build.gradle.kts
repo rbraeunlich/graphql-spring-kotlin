@@ -20,15 +20,15 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("com.graphql-java-kickstart:graphql-spring-boot-starter:7.1.0")
+    implementation("com.graphql-java-kickstart:graphql-spring-boot-starter:8.0.0")
     implementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo")
 
-    runtimeOnly("com.graphql-java-kickstart:graphiql-spring-boot-starter:7.1.0")
+    runtimeOnly("com.graphql-java-kickstart:graphiql-spring-boot-starter:8.0.0")
 
     testImplementation("junit:junit:4.13")
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("com.graphql-java-kickstart:graphql-spring-boot-starter-test:7.1.0")
+    testImplementation("com.graphql-java-kickstart:graphql-spring-boot-starter-test:8.0.0")
     testImplementation("org.assertj:assertj-core:3.11.1")
 }
 
